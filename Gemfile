@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+########## Gems for mongoid
+gem 'mongoid', github: 'mongoid/mongoid'
+gem 'bson_ext'
+##########
+
 ########### Gems for bootstrap
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
