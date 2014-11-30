@@ -22,7 +22,17 @@ Rails.application.configure do
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
-  config.assets.debug = true
+  config.assets.debug = false
+
+  # Generate digests for assets URLs.
+  config.assets.digest = true
+
+  # Compress JavaScripts and CSS.
+  config.assets.js_compressor = :uglifier
+
+  #config.assets.css_compressor = :yui
+
+  config.assets.css_compressor = :sass
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
