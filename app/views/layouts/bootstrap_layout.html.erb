@@ -51,7 +51,21 @@
             <li><%= link_to "Link1", "/path1"  %></li>
             <li><%= link_to "Link2", "/path2"  %></li>
             <li><%= link_to "Link3", "/path3"  %></li>
+
           </ul>
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+              <% if user_signed_in? %>
+                  <li><%= link_to "Welcome, #{current_user.email} in new world." %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+              <% else %>
+                  <li><%= link_to "Signin", new_user_session_path %></li>
+                  <li><%= link_to "Signup", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </div>
+          
         </div>
       </div>
     </div>
