@@ -33,4 +33,10 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+
+  #  Added to avoid moped error #############
+  def self.serialize_into_session(record)
+    [record.id.to_s, record.authenticatable_salt]
+  end
+  ###########################################
 end
