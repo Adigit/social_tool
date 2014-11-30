@@ -5,6 +5,10 @@ gem 'mongoid', github: 'mongoid/mongoid'
 gem 'bson_ext'
 ##########
 
+##########
+gem 'devise'
+##########
+
 ########### Gems for bootstrap
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
