@@ -43,4 +43,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
    config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+   config.twitter_key = "E3x34vzbKUlizF4HTPfnBJ9BK"
+   config.twitter_secret = "fEZtef0Puctf7VHwbtZTrhIiytXFIw49uNihVlWfEuP9LQd2OI"
 end
