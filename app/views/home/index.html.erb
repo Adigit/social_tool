@@ -1,2 +1,17 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if current_user %>
+	<% if !current_user.twitter_credentials.blank? %>
+		<table>
+			<tr>
+				<th>Provider</th>
+				<th> Name</th>
+				<th>Action</th>
+			</tr>
+			
+			<%= render :partial => "twitter_credentials", :collection => current_user.twitter_credentials, :as => :tw %>
+		</table>
+	<% end %>
+
+	<%= link_to "Add twitter account", "auth/twitter"%>
+<%else%>
+	<p>Login first to move further!</p>
+<% end %>

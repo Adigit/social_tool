@@ -52,4 +52,6 @@ class User
     [record.id.to_s, record.authenticatable_salt]
   end
   ###########################################
+
+  has_many :twitter_credentials 
 end
