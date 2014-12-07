@@ -6,7 +6,7 @@ class TwitterCredential
   field :name, type: String, default: ""
   field	:oauth_token, type: String, default: ""
   field	:oauth_secret, type: String, default: ""
-
+  
   belongs_to :user  
 
   def self.from_omniauth(auth, user_id)
