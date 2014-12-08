@@ -2,8 +2,8 @@
 	<% if !current_user.twitter_credentials.blank? %>
 		<table>
 			<tr>
-				<th>Provider</th>
-				<th> Name</th>
+				<th>Provider</th> 
+				<th> Name</th> 
 				<th>Action</th>
 
 			</tr>
@@ -11,8 +11,18 @@
 			<%= render :partial => "twitter_credentials", :collection => current_user.twitter_credentials, :as => :tw %>
 		</table>
 	<% end %>
-	<%= link_to "Add keywords", "#", class: "keyword"%>
+	<br/>
+	
+	<%= link_to "Add keywords", "#", class: "keyword"%>      |
 	<%= link_to "Add twitter account", "auth/twitter"%>
+	<% if current_user.keywords %>
+		<h3>Keywords searched for </h3>
+		<%= current_user.keywords %>
+
+		<%= link_to "Refresh keywords", "tweets/get_tweets", remote: true %>
+
+		<h4>Tweets for the keywords</h4>
+	<% end %>
 	<div class="form">
 		<%= form_tag "users/keywords", remote: true do %>		
 			<%= text_field_tag "key" %>
