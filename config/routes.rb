@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   get 'users/index'
   post 'users/keywords'
+  get 'tweets/get_tweets'
   get 'auth/:provider/callback', to: 'twitter_credentials#create'
   
   devise_for :users
