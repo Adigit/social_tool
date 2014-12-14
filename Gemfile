@@ -24,6 +24,9 @@ gem 'omniauth-twitter'
 gem 'figaro'
 ###########
 
+###########
+gem 'chewy'
+###########
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.5'
 # Use SCSS for stylesheets
