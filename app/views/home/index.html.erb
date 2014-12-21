@@ -18,10 +18,11 @@
 	<% if current_user.keywords %>
 		<h3>Keywords searched for </h3>
 		<%= current_user.keywords %>
-
-		<%= link_to "Refresh Tweets", "tweets/get_tweets", remote: true %>
+		<% last_tweet_id = @tweets.last.attributes["tweet_id"]%>
+		<%= link_to "Refresh Tweets", "tweets/get_tweets?last_tweet_id =#{last_tweet_id}", remote: true %>
 
 		<h4>Tweets for the keywords</h4>
+		<%= render :partial => "/tweets/tweets", :collection => @tweets , :as => :tweet%>
 	<% end %>
 	<div class="form">
 		<%= form_tag "users/keywords", remote: true do %>		
